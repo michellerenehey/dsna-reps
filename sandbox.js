@@ -63,5 +63,26 @@ function fizzBuzz(number) {
   }
   return result;
 }
+// same as let result = '; if (i%3===0) result += 'Fizz'; if (i%5===0) result += 'Buzz'; list.push(result || i); return list
 
 console.log(fizzBuzz(16));
+
+// ANNAGRAMS
+
+function anagrams(wordOne, wordTwo) {
+  const arr1 = wordOne.split('').sort().join('');
+  const arr2 = wordTwo.split('').sort().join('');
+  return arr1 === arr2 ? true : false;
+}
+
+console.log(anagrams('superintended', 'unpredestined'));
+console.log(anagrams('pictorialness', 'documentarily'));
+
+// UNIQUE STRINGS
+
+function uniqueStrings(strings) {}
+
+console.log(
+  uniqueStrings(['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a'])
+);
+console.log(uniqueStrings(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']));
