@@ -27,6 +27,22 @@ function oddishOrEvenish(number) {
     0
   );
   return sum % 2 === 0 ? 'Evenish' : 'Oddish';
+  // same as return sum %2 ? 'Oddish' : 'Evenish' bc without the ===0 it is falsey (0 is falsey)
 }
 
 console.log(oddishOrEvenish(121));
+
+// AT
+
+function at(arr, index) {
+  if (index >= 0) {
+    return arr[index];
+  } else {
+    return arr[arr.length + index];
+    // same as return arr[arr.length -- index]
+  }
+
+  // same as return index > -1 ? arr[index] : arr[arr.length + index]
+}
+// `['a', 'b', 'c', 'd', 'e']`, `1` should get 'b'
+// `['a', 'b', 'c', 'd', 'e']`, `-2` should get 'd'
