@@ -78,11 +78,29 @@ function anagrams(wordOne, wordTwo) {
 console.log(anagrams('superintended', 'unpredestined'));
 console.log(anagrams('pictorialness', 'documentarily'));
 
-// UNIQUE STRINGS
+// // UNIQUE STRINGS
 
-function uniqueStrings(strings) {}
+// function uniqueStrings(strings) {
+//   // array of arrays of letters, sorted
+//   const orderedUniqueLetters = strings.map((s) => [...new Set(s).sort()]);
+//   const duplicates = [...new Set(...orderedUniqueLetters)];
+// }
 
-console.log(
-  uniqueStrings(['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a'])
-);
-console.log(uniqueStrings(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']));
+// console.log(
+//   uniqueStrings(['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a'])
+// );
+// console.log(uniqueStrings(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']));
+
+// UNIQUE CHAR from class lecture
+function uniqueChar(string) {
+  const chars = string.split('').sort();
+  for (let i = 0; i < chars.length; i++) {
+    const current = chars[i];
+    const prev = chars[i - 1];
+    const next = chars[i + 1];
+    if (current !== prev && current !== next) return current;
+  }
+  return '_';
+}
+
+console.log(uniqueChar('abdacabad'));
